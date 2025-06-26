@@ -13,16 +13,21 @@
 # limitations under the License.
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from mi439 device configuration.
 $(call inherit-product, device/xiaomi/mi439/device.mk)
 
-# Inherit from common AOSP configuration
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit from common crDroid configuration
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_NAME := aosp_mi439
+# crDroid
+TARGET_DISABLE_MATLOG := true
+TARGET_SUPPORTS_QUICK_TAP := false
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
+PRODUCT_NAME := lineage_mi439
 PRODUCT_DEVICE := mi439
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI SDM439
