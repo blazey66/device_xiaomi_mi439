@@ -19,10 +19,31 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from mi439 device configuration.
 $(call inherit-product, device/xiaomi/mi439/device.mk)
 
-# Inherit from common AOSP configuration
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit from common Axion configuration
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_NAME := aosp_mi439
+# Axion
+TARGET_DISABLE_EPPE := true
+AXION_CAMERA_REAR_INFO := 13,2
+AXION_CAMERA_FRONT_INFO := 8
+AXION_MAINTAINER := blazey66
+AXION_PROCESSOR := Snapdragon_439
+TARGET_INCLUDE_VIPERFX := true
+
+# Axion CPU Flags
+AXION_CPU_SMALL_CORES := 0,1,2,3
+AXION_CPU_BIG_CORES := 4,5,6,7
+
+# CPU sets configuration
+AXION_CPU_BG := 0-3
+AXION_CPU_FG := 0-7
+AXION_CPU_LIMIT_BG := 0-2
+AXION_CPU_UNLIMIT_UI := 0-7
+AXION_CPU_LIMIT_UI := 0-4
+AXION_CPU_DISPLAY := 4-7
+AXION_CPU_AUDIO := 0-4
+
+PRODUCT_NAME := lineage_mi439
 PRODUCT_DEVICE := mi439
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI SDM439

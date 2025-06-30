@@ -443,3 +443,6 @@ endif
 
 # QC common
 $(call inherit-product, device/qcom/common/common.mk)
+
+# Viper4FX
+$(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
