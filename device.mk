@@ -433,15 +433,5 @@ $(call inherit-product, hardware/mithorium-4.19/mithorium_qcom_hals.mk)
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/mi439/mi439-vendor.mk)
 
-# EXTRA: MiuiCamera
-ifneq ($(wildcard vendor/miuicamera/config.mk),)
-$(call inherit-product, vendor/miuicamera/config.mk)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/miuicam/pine.xml:$(TARGET_COPY_OUT_VENDOR)/etc/device_features/pine.xml \
-    $(LOCAL_PATH)/configs/miuicam/olive.xml:$(TARGET_COPY_OUT_VENDOR)/etc/device_features/olive.xml \
-    $(LOCAL_PATH)/configs/miuicam/olive.xml:$(TARGET_COPY_OUT_VENDOR)/etc/device_features/olivelite.xml \
-    $(LOCAL_PATH)/configs/miuicam/olive.xml:$(TARGET_COPY_OUT_VENDOR)/etc/device_features/olivewood.xml
-endif
-
 # QC common
 $(call inherit-product, device/qcom/common/common.mk)
