@@ -26,6 +26,12 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 TARGET_DISABLE_MATLOG := true
 TARGET_SUPPORTS_QUICK_TAP := false
 TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_EXCLUDES_AUDIOFX := true
+PRODUCT_NO_CAMERA := true
+TARGET_DISABLE_LINEAGE_SDK := true
+TARGET_DISABLES_GMS := true
+WITH_GMS := false
+TARGET_DISABLE_EPPE := true
 
 PRODUCT_NAME := lineage_mi439
 PRODUCT_DEVICE := mi439
