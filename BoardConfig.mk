@@ -222,3 +222,6 @@ include vendor/xiaomi/mi439/BoardConfigVendor.mk
 
 # QC common
 include device/qcom/common/BoardConfigQcom.mk
+
+# Disable dexpreopt for org.lineageos.platform
+DEXPREOPT_DISABLED_MODULES += org.lineageos.platform
